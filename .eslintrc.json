@@ -1,0 +1,21 @@
+{
+  "env": {
+    "node": true,
+    "commonjs": true,
+    "es2021": true,
+    "jest": true
+  },
+  "plugins": ["jest"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:react-hooks/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 13,
+    "sourceType": "module"
+  },
+  "rules": {
+    "semi": ["error", "always"],
+    "max-len": [2, { "code": 140, "tabWidth": 2, "ignoreUrls": true }],
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "jest/no-focused-tests": "error",
+    "react/prop-types": "off"
+  }
+}

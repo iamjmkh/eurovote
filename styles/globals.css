@@ -1,0 +1,1124 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
+
+/** COLORS
+
+Dark: #111111
+Light: #f8f8f8
+Blue: #0d3c82
+Yellow: #fef700
+Grey: #808080
+
+**/
+
+body {
+  background: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  font-family: 'Rubik';
+  color: #111111;
+}
+
+.yellow {
+  color: #fef700;
+}
+.blue {
+  color: #0d3c82;
+}
+.dark {
+  color: #111111;
+}
+.light {
+  color: #f8f8f8;
+}
+.grey {
+  color: #808080;
+}
+
+.divider {
+  width: 100%;
+  min-height: 25px;
+  border-bottom: 1px solid #808080;
+}
+
+.spacer {
+  min-height: 100px;
+}
+
+.sectionHeader {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0 0px 0;
+  margin: 80px 0 0 0;
+  border-top: 1px solid #d3d3d3;
+}
+
+.sectionHeader h3 {
+  font-size: 42px;
+}
+
+.sectionHeaderAlt {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0 20px 0;
+  margin: 0;
+}
+
+.sectionHeaderAlt h3 {
+  font-size: 42px;
+}
+
+/** HEADER & NAVIGATION **/
+
+header {
+  min-height: 150px;
+  padding: 25px 0;
+  background: #0d3c82;
+  text-align: center;
+  display: grid;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 48px;
+  color: #f8f8f8;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+header h1 a {
+  color: #f8f8f8;
+  text-decoration: none;
+}
+
+header h1 a:hover {
+  color: #fef700;
+}
+
+.navigation {
+  padding: 10px;
+  margin: 0 auto;
+  color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.navigationMenu ul {
+  padding: 0;
+  display: flex;
+}
+
+.navigationMenu li {
+  padding: 0 25px 0 25px;
+  list-style-type: none;
+}
+
+.navigationMenu li a {
+  width: 100%;
+  color: #f8f8f8;
+  text-decoration: none;
+  display: block;
+}
+
+.navigationMenu li a:hover {
+  color: #fef700;
+}
+
+.navMenuTitle {
+  display: none;
+}
+
+.hamburger {
+  height: 40px;
+  width: 40px;
+  padding: 0.5rem;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  transform: translateY(-50%);
+  display: none;
+}
+
+@media screen and (max-width: 668px) {
+  .navMenuTitle {
+    margin: 0 0 0 25px;
+    padding: 0;
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .homeNav {
+    display: none;
+  }
+
+  .navigation {
+    margin: unset;
+  }
+
+  .navigationMenu ul {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    background-color: #0d3c82;
+    padding-bottom: 50px;
+  }
+
+  .navigationMenu li {
+    text-align: center;
+    margin: 0;
+  }
+
+  .navigationMenu li a {
+    color: #f8f8f8;
+    width: 100%;
+    padding: 20px 0;
+    margin: 0 0 5px 0;
+    border: 1px solid #f8f8f8;
+  }
+
+  .navigationMenu.expanded ul {
+    display: block;
+  }
+}
+
+/** HOME PAGE **/
+
+.countdownDate {
+  width: 90%;
+  text-align: center;
+  padding: 40px 0 20px 0;
+  margin: 0 auto;
+}
+
+.countdownDate p {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.countdownDate .largeDate {
+  font-size: 48px;
+}
+
+.intro {
+  width: 70%;
+  margin: 10px auto 60px auto;
+  text-align: center;
+}
+
+.intro p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+.featuredSongWrapper {
+  width: 100%;
+  min-height: 400px;
+  padding: 30px 0;
+}
+
+.featuredSong {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.featuredSongLabel {
+  width: 100%;
+  background: #0d3c82;
+  color: #f8f8f8;
+  font-size: 16px;
+
+  text-transform: uppercase;
+}
+
+.featuredSongLabel p {
+  margin: 0;
+  padding: 10px;
+}
+
+.featuredSongImage {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: #0d3c82;
+}
+
+.featuredSongImage img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.featuredSongInfo {
+  width: 100%;
+  background: #0d3c82;
+  color: #f8f8f8;
+  font-size: 32px;
+  text-align: right;
+}
+
+.featuredSongInfo h3,
+.featuredSongInfo a {
+  margin: 0;
+  padding: 20px 10px 0 20px;
+  font-weight: 400;
+  color: #f8f8f8;
+  text-decoration: none;
+}
+
+.featuredSongInfo a:hover {
+  color: #fef700;
+}
+
+.featuredSongInfo p {
+  margin: 0;
+  padding: 10px 20px 20px 20px;
+  font-size: 22px;
+}
+
+@media screen and (max-width: 668px) {
+  .featuredSong {
+    width: 95%;
+  }
+
+  .featuredSongLabel,
+  .featuredSongInfo {
+    text-align: center;
+  }
+
+  .featuredSongInfo h3,
+  .featuredSongInfo a {
+    padding: 20px 0 0 0;
+  }
+}
+
+/** HOME CARDS **/
+
+.paginationBox {
+  width: 90%;
+  margin: 40px auto 0 auto;
+  padding: 60px 0 60px 0;
+  display: flex;
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+  text-align: center;
+}
+
+.paginationBoxPrev,
+.paginationBoxNext {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.paginationBoxPages {
+  margin: 0 auto;
+}
+
+.paginationBoxPrev {
+  text-align: right;
+}
+
+.paginationBoxNext {
+  text-align: left;
+}
+
+.paginationBox a {
+  color: #f8f8f8;
+  text-decoration: none;
+  background: #111111;
+  padding: 15px;
+}
+
+.paginationBox a:hover {
+  color: #fef700;
+}
+
+@media screen and (max-width: 600px) {
+  .paginationBox {
+    display: block;
+    padding: 10px 0 10px 0;
+  }
+
+  .paginationBoxPrev,
+  .paginationBoxNext {
+    width: 100%;
+    margin: 50px auto;
+  }
+
+  .paginationBoxPrev {
+    text-align: center;
+  }
+
+  .paginationBoxNext {
+    text-align: center;
+  }
+}
+
+.cardListWrapper {
+  width: 90%;
+  margin: 20px auto;
+}
+
+.altCardListWrapper {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.cardList,
+.homeCardList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+.cardListHorizontal {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+.entryCard {
+  margin-top: 20px;
+  background: #ffffff;
+}
+
+.cardImage {
+  display: block;
+  width: 100%;
+  height: 250px;
+}
+
+.cardImage img {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.cardEntry2 {
+  width: 75%;
+}
+
+.cardTitle,
+.altCardTitle {
+  width: 100%;
+}
+
+.cardTitle p {
+  margin: 0;
+  padding: 15px 10px 0 10px;
+}
+
+.altCardTitle p {
+  margin: 0;
+}
+
+.cardTitle a {
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 700;
+  padding: 0 10px;
+  color: #111;
+  box-decoration-break: clone;
+}
+
+.altCardTitle a {
+  width: 100%;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+  box-decoration-break: clone;
+}
+
+.cardDetails {
+  display: flex;
+  padding: 0 10px 10px 10px;
+  font-size: 15px;
+}
+
+.cardDetails p {
+  padding-top: 5px;
+  color: #808080;
+  margin: 0;
+  padding: 5px 0 0 0;
+}
+
+.cardDetails a {
+  text-decoration: none;
+  color: #808080;
+}
+
+.cardDetails a:hover {
+  text-decoration: underline;
+}
+
+.cardDetailsLeft {
+  width: 55%;
+  padding: 0 10px 10px 10px;
+}
+
+.cardDetailsRight {
+  width: 45%;
+  text-align: right;
+  padding: 0 10px 10px 0px;
+}
+
+.altEntryCard {
+  margin-top: 20px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.altCardImage {
+  display: block;
+  width: 50%;
+}
+
+.altCardImage img {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.altCardDetails {
+  display: block;
+  width: 75%;
+  padding-left: 40px;
+}
+
+.altCardSubtitle {
+  width: 100%;
+}
+
+.altCardSubtitle p,
+.altCardTitle p {
+  margin: 10px 0 10px 0;
+  padding: 0;
+  color: #808080;
+}
+
+.entryDetails h3 {
+  font-size: 32px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+@media screen and (max-width: 1100px) {
+  .cardTitle a,
+  .altCardTitle a {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .homeCardList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .cardList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .altCardListWrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .altCardTitle a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .cardList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .cardTitle a {
+    font-size: 22px;
+  }
+
+  .altEntryCard {
+    display: block;
+  }
+
+  .altCardImage {
+    width: 100%;
+    height: 200px;
+  }
+
+  .altCardDetails {
+    width: 100%;
+    padding: 20px 0 30px 30px;
+  }
+}
+
+/** ENTRY PAGE **/
+.entryPage {
+  width: 90%;
+  margin: 50px auto;
+}
+
+.entryPage h3 {
+  font-size: 32px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.entryHeader {
+  width: 100%;
+  border-bottom: 1px solid #808080;
+  border-top: 1px solid #808080;
+  padding: 5px 0;
+  text-align: center;
+}
+
+.entryHeaderTitle {
+  width: 100%;
+  margin: 20px auto;
+}
+
+.entryHeaderTitle h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+.entryHeaderTop,
+.entryHeaderBottom {
+  font-size: 32px;
+  padding: 0;
+}
+
+.statsHeader {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.statsHeader h2 {
+  font-size: 32px;
+}
+
+.grandFinalStatus {
+  font-size: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.entryStatsBlock {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0 50px 0;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+.entryStatFigure {
+  font-size: 72px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.entryStat p {
+  color: #808080;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.centralAlign {
+  text-align: center;
+}
+
+.juryVsTelevoteBlock {
+  width: 100%;
+  margin: 40px auto;
+  padding-bottom: 50px;
+  display: flex;
+  text-align: center;
+  border-bottom: 1px solid #808080;
+}
+
+.juryVsTelevoteBlock h3 {
+  font-size: 28px;
+}
+
+.juryBlock {
+  width: 100%;
+  padding: 10px;
+  border-left: 5px solid #f8f8f8;
+  border-right: 5px solid #f8f8f8;
+  min-height: 200px;
+  background: white;
+}
+
+.televoteBlock {
+  width: 100%;
+  padding: 10px;
+  border-left: 5px solid #f8f8f8;
+  border-right: 5px solid#f8f8f8;
+  min-height: 200px;
+  background: white;
+}
+
+.entryStatFigureSmall {
+  font-size: 38px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.juryVsTelevoteBlock p {
+  font-size: 11px;
+}
+
+@media screen and (max-width: 900px) {
+  .entryStatsBlock {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: 25px;
+  }
+
+  .entryStatFigure {
+    font-size: 38px;
+  }
+
+  .entryHeader p {
+    font-size: 24px;
+  }
+
+  .entryHeader h1 {
+    font-size: 42px;
+  }
+
+  .juryVsTelevoteBlock h3 {
+    font-size: 24px;
+  }
+
+  .juryVsTelevoteBlock {
+    display: block;
+  }
+
+  .televoteBlock,
+  .juryBlock {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 10px 0 25px 0;
+  }
+
+  .juryBlock {
+    border-bottom: 5px solid #f8f8f8;
+  }
+}
+
+.entryImageBlock {
+  width: 100%;
+  margin: 50px auto 50px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+.entryImageBlock p {
+  font-size: 9px;
+  color: #808080;
+  text-transform: uppercase;
+}
+
+.entryImage img {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+@media screen and (max-width: 900px) {
+  .entryImageBlock {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .entryImage {
+    margin-bottom: 50px;
+  }
+}
+
+.commentaryBox {
+  width: 60%;
+  padding: 25px;
+  margin: 25px auto;
+  background: #d3d3d3;
+  text-align: center;
+}
+
+.commentary {
+  font-size: 24px;
+}
+
+.editor {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 900px) {
+  .commentaryBox {
+    width: 90%;
+  }
+}
+
+/** BLOGS **/
+
+.blogList {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+.blogCard {
+  background: #ffffff;
+  padding: 20px 0;
+  margin: 0 0 30px 0;
+  display: flex;
+}
+
+.blogCardImage {
+  width: 30%;
+  padding-left: 20px;
+}
+
+.blogCardImage img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.blogCardDetails {
+  width: 70%;
+  padding: 20px 50px 20px 50px;
+}
+
+.blogCardDetails h2 a {
+  font-size: 36px;
+  color: #111111;
+}
+
+.blogCardDetails a {
+  text-decoration: none;
+}
+
+.blogCardDetails h2 a:hover {
+  text-decoration: underline;
+}
+
+.date {
+  font-size: 12px;
+  color: #808080;
+}
+
+.blueButton {
+  background: #111111;
+  padding: 15px;
+  color: #f8f8f8;
+  font-size: 14px;
+}
+
+.blueButton:hover {
+  color: #fef700;
+  text-decoration: none;
+}
+
+.blogCardDetails .small {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #808080;
+  margin-bottom: 30px;
+}
+
+.tags {
+  padding: 3px 5px;
+  background: #d3d3d3;
+  color: #111111;
+  font-size: 10px;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .blogCard {
+    display: block;
+  }
+
+  .blogCardImage {
+    width: 100%;
+    height: 200px;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .blogCardDetails {
+    width: 100%;
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .blogCardDetails p {
+    padding: 0 20px;
+  }
+
+  .blogCardDetails h2 {
+    padding: 0 20px;
+  }
+}
+
+.blogHeader {
+  width: 100%;
+  display: inline-flex;
+  margin: 0;
+  padding: 30px 0;
+  align-items: center;
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+}
+
+.blogDetails {
+  width: 70%;
+  margin: 0;
+  padding: 0 20px 0 20px;
+  order: 1;
+}
+
+.blogDetailsDate {
+  width: 100%;
+  margin: 0;
+  padding: 20px 0 10px 0;
+  color: #808080;
+  font-size: 14px;
+}
+
+.blogDetailsTitle {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.blogDetailsTitle h1 {
+  margin: 0;
+  padding: 10px 0;
+  font-size: 68px;
+  line-height: 1.2;
+}
+
+.blogDetailsTags {
+  width: 100%;
+  margin: 0;
+  padding: 10px 0 20px 0;
+}
+
+.tagsBlogpage {
+  padding: 8px 10px;
+  background: #d3d3d3;
+  color: #111111;
+  font-size: 12px;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+.blogImage {
+  width: 30%;
+  margin: 0;
+  padding: 0;
+  order: 2;
+}
+
+.blogImage img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.blogImage p {
+  font-size: 9px;
+  color: #808080;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.blogEntry {
+  width: 100%;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 50px;
+  box-sizing: border-box;
+}
+
+.blogEntry p {
+  font-size: 16px;
+  line-height: 2;
+}
+
+.blogEntry h1 {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: left;
+  margin: 50px 0 0 0;
+  padding: 0;
+}
+
+.blogEntry h2 {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: left;
+  margin: 50px 0 0 0;
+  padding: 0;
+}
+
+.blogEntry h3 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: left;
+  margin: 50px 0 0 0;
+  padding: 0;
+}
+
+.blogEntry hr {
+  border: 1px solid #d3d3d3;
+  margin: 30px 0;
+}
+
+.blogEntry table {
+  border: 2px solid #d3d3d3;
+  width: 85%;
+}
+
+.blogEntry th {
+  background: #f8f8f8;
+  text-align: left;
+  padding: 5px 20px;
+}
+
+.blogEntry td {
+  border-bottom: 1px solid #f8f8f8;
+  padding: 5px 20px;
+}
+
+.blogEntry img {
+  max-width: 50%;
+  height: auto;
+}
+
+@media screen and (max-width: 1000px) {
+  .blogDetailsTitle h1 {
+    font-size: 42px;
+  }
+
+  .blogEntry table {
+    width: 100%;
+  }
+
+  .blogEntry img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .blogHeader {
+    display: inline-grid;
+    text-align: center;
+  }
+
+  .blogDetails {
+    width: 100%;
+    order: 2;
+    padding: 0;
+  }
+
+  .blogImage {
+    width: 100%;
+    height: 200px;
+    order: 1;
+    margin-bottom: 25px;
+  }
+
+  .blogImage p {
+    text-align: center;
+  }
+}
+
+/** FOOTER **/
+
+.infoBanner {
+  width: 100%;
+  background: #0d3c82;
+  color: #f8f8f8;
+  padding: 20px 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.infoBanner p {
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  background: #111;
+  color: #f8f8f8;
+  text-align: center;
+  min-height: 300px;
+  padding: 25px 0;
+}
+
+footer h3 {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+footer p {
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+
+footer a {
+  color: #f8f8f8;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fef700;
+}
+
+.footerSocial {
+  padding: 20px;
+  font-size: 32px;
+}
+
+.page-content {
+  width: 100%;
+  min-height: 600px;
+}
+
+@media screen and (max-width: 400px) {
+  header h1 {
+    font-size: 36px;
+  }
+}
