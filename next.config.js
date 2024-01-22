@@ -4,4 +4,5 @@ module.exports = {
     unoptimized: true,
   },
   output: 'export',
+  trailingSlash: true,
 };
