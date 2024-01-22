@@ -34,7 +34,6 @@ export async function getStaticProps({ params }) {
     'fields.songSlug': params.slug,
   });
 
-  console.log(params, items);
   return {
     props: { song: items[0] },
   };

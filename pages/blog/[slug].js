@@ -85,7 +85,6 @@ export async function getStaticProps({ params }) {
     'fields.blogSlug': params.slug,
   });
 
-  console.log(params, items);
   return {
     props: { blog: items[0] },
   };
@@ -93,7 +92,7 @@ export async function getStaticProps({ params }) {
 
 export default function BlogDetails({ blog }) {
   const { blogTitle, blogDate, blogTags, blogImage, blogEntry } = blog.fields;
-  console.log(blog);
+
   return (
     <div className="entryPage">
       <Head>

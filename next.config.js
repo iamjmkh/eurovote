@@ -3,4 +3,5 @@ module.exports = {
     domains: ['images.ctfassets.net'],
     unoptimized: true,
   },
+  output: 'export',
 };

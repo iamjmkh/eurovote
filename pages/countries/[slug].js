@@ -38,7 +38,6 @@ export async function getStaticProps({ params }) {
     .sort((a, b) => a.fields.songTitle.localeCompare(b.fields.songTitle))
     .sort((b, a) => a.fields.songYear.localeCompare(b.fields.songYear));
 
-  console.log(params, items);
   return {
     props: { country: items[0], songs },
   };

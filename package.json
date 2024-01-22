@@ -9,8 +9,7 @@
     "lint:fix": "eslint --ext .js,.jsx components pages public styles --fix && prettier --write '{**/*,*}.{cjs,mjs,js,jsx,json}'",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "export": "next build && next export"
+    "start": "next start"
   },
   "author": "",
   "license": "ISC",

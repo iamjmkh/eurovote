@@ -15,8 +15,6 @@ export const getStaticPaths = async () => {
     limit: 1,
   });
 
-  console.log(res);
-
   const totalPages = Math.ceil(res.total / SongsPerPage);
 
   const paths = [];

@@ -21,7 +21,6 @@ export async function getStaticProps() {
 }
 
 export default function Countries({ countries }) {
-  console.log(countries);
   return (
     <div className="cardListWrapper">
       <Head>

@@ -18,7 +18,6 @@ export async function getStaticProps() {
   };
 }
 export default function Contests({ contests }) {
-  console.log(contests);
   return (
     <div className="cardListWrapper">
       <Head>

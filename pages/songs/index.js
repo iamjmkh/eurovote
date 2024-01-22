@@ -6,7 +6,6 @@ import { SongsPerPage } from '../../utils/Config';
 import Head from 'next/head';
 
 export default function Songs({ songs, totalPages }) {
-  console.log(songs.length);
   return (
     <div className="cardListWrapper">
       <Head>

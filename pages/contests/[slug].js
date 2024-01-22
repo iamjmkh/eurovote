@@ -34,7 +34,6 @@ export async function getStaticProps({ params }) {
   const res = await client.getEntries({ content_type: 'song', 'fields.songYear': items[0].fields.contestYear });
   const songs = res.items.sort((a, b) => a.fields.songOrder - b.fields.songOrder);
 
-  console.log(params, items);
   return {
     props: { contest: items[0], songs },
   };
