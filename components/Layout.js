@@ -12,7 +12,7 @@ export default function Layout({ children }) {
           <a href="/">
             Eurovote{' '}
             <span className="yellow">
-              <FontAwesomeIcon icon={faMicrophone} />
+              <FontAwesomeIcon icon={faMicrophone} width="32" />
             </span>
           </a>
         </h1>
