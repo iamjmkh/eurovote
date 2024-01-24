@@ -698,7 +698,7 @@ header h1 a:hover {
   }
 
   .entryStatFigure {
-    font-size: 38px;
+    font-size: 82px;
   }
 
   .entryHeader p {
@@ -732,7 +732,7 @@ header h1 a:hover {
 
 .entryImageBlock {
   width: 100%;
-  margin: 50px auto 50px auto;
+  margin: 50px auto 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 5px;
