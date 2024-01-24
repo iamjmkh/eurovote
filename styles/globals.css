@@ -1076,8 +1076,9 @@ header h1 a:hover {
 }
 
 .infoBanner p {
+  width: 90%;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
 }
 
 footer {
