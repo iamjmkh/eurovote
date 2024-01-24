@@ -1,8 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
+import { isDefined } from '../utils/isDefined';
 
 export default function SongCard2({ song, showYear = false, showCountry = false }) {
-  const { songTitle, songSlug, songArtist, songImage, songFinalPosition, songCountry2, songYear } = song.fields;
+  const { songTitle, songSlug, songArtist, songImage, songFinalPosition, songCountry2, songYear, songTags } =
+    song.fields;
   const songUrl = `/songs/${songSlug}`;
   return (
     <div className="altEntryCard">
@@ -27,6 +29,16 @@ export default function SongCard2({ song, showYear = false, showCountry = false 
         <div className="altCardSubtitle">
           <p>{songArtist.fields.artistName}</p>
           <p>{songFinalPosition}</p>
+
+          {isDefined(songTags) && (
+            <div className="songDetailsTags">
+              {songTags.map((tag) => (
+                <span className="tagsSongCard" key={tag}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

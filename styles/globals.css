@@ -941,6 +941,27 @@ header h1 a:hover {
   border-radius: 5px;
 }
 
+.blogDetailsTags {
+  width: 100%;
+  margin: 0;
+  padding: 10px 0 20px 0;
+}
+
+.songDetailsTags {
+  width: 100%;
+  margin: 0;
+  padding: 10px 0 20px 0;
+}
+
+.tagsSongCard {
+  padding: 8px 10px;
+  background: #ffcccb;
+  color: #ff0000;
+  font-size: 12px;
+  margin: 3px;
+  border-radius: 5px;
+}
+
 .blogImage {
   width: 30%;
   margin: 0;
