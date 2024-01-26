@@ -69,6 +69,7 @@ export default function SongDetails({ song }) {
     songImage,
     songImage2,
     songImage3,
+    selectionType,
   } = song.fields;
   return (
     <div className="entryPage">
@@ -85,6 +86,11 @@ export default function SongDetails({ song }) {
           <h1>{songTitle}</h1>
         </div>
         <p className="entryHeaderBottom">{songArtist.fields.artistName}</p>
+        {isDefined(selectionType) && (
+          <p>
+            <span className="songEntryTag">{selectionType}</span>
+          </p>
+        )}
       </div>
       {/* GRAND FINAL */}
       <div className="entryDetails">

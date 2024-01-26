@@ -192,25 +192,6 @@ header h1 a:hover {
 
 /** HOME PAGE **/
 
-.countdownDate {
-  width: 90%;
-  text-align: center;
-  padding: 40px 0 20px 0;
-  margin: 0 auto;
-}
-
-.countdownDate p {
-  margin: 0;
-  padding: 0;
-  font-size: 24px;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
-.countdownDate .largeDate {
-  font-size: 48px;
-}
-
 .intro {
   width: 70%;
   margin: 10px auto 60px auto;
@@ -586,7 +567,7 @@ header h1 a:hover {
   width: 100%;
   border-bottom: 1px solid #808080;
   border-top: 1px solid #808080;
-  padding: 5px 0;
+  padding: 5px 0 20px 0;
   text-align: center;
 }
 
@@ -606,6 +587,19 @@ header h1 a:hover {
 .entryHeaderBottom {
   font-size: 32px;
   padding: 0;
+  margin: 40px 0 0 0;
+}
+
+.entryHeaderBottom p {
+  padding: 0;
+  margin: 0;
+}
+
+.songEntryTag {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  color: #808080;
 }
 
 .statsHeader {
