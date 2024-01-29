@@ -21,13 +21,13 @@ export default function SongCard2({ song, showYear = false, showCountry = false 
       </div>
       <div className="altCardDetails">
         <div className="altCardTitle">
-          <p>
+          <p className="grey">
             {showCountry && songCountry2} {showYear && songYear}
           </p>
           <a href={songUrl}>{songTitle}</a>
         </div>
         <div className="altCardSubtitle">
-          <p>{songArtist.fields.artistName}</p>
+          <p className="grey">{songArtist.fields.artistName}</p>
           <p>{songFinalPosition}</p>
 
           {isDefined(songTags) && (

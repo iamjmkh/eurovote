@@ -2,6 +2,7 @@ import React from 'react';
 import { createClient } from 'contentful';
 import Image from 'next/image';
 import SongCard2 from '../../components/SongCard2';
+// import dSongCard from '../../components/dSongCard';
 import Head from 'next/head';
 
 const client = createClient({
@@ -124,6 +125,13 @@ export default function CountryDetails({ country, songs }) {
         <div className="subHeader">
           <h3>Entries</h3>
         </div>
+
+        {/* <div className="detailedSongCardWrapper">
+          {songs.map((song) => (
+            <dSongCard key={song.sys.id} song={song} showYear />
+          ))}
+        </div> */}
+
         <div className="altCardListWrapper">
           <div className="cardListHorizontal">
             {songs.map((song) => (
