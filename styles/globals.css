@@ -492,7 +492,6 @@ header h1 a:hover {
 .altCardTitle p {
   margin: 10px 0 10px 0;
   padding: 0;
-  color: #808080;
 }
 
 .entryDetails h3 {
@@ -1039,6 +1038,7 @@ header h1 a:hover {
 .blogEntry img {
   max-width: 50%;
   height: auto;
+  margin: 25px 0 20px 0;
 }
 
 @media screen and (max-width: 1000px) {
@@ -1138,4 +1138,69 @@ footer a:hover {
   header h1 {
     font-size: 36px;
   }
+}
+
+/** NEW SONG **/
+
+.detailedSongCardWrapper {
+  width: 70%;
+  min-height: 500px;
+  margin: 0 auto;
+}
+
+.detailedSongCard {
+  width: 100%;
+
+  background: #ffffff;
+  display: flex;
+}
+
+.dSongCardImage {
+  width: 30%;
+  background: red;
+}
+
+.dSongCardDetails {
+  width: 70%;
+
+  display: flex;
+  padding: 25px 0;
+}
+
+.dSongCardTitle {
+  width: 70%;
+  padding: 0 0 0 40px;
+
+  border-right: 0.5px solid #808080;
+  text-align: left;
+  color: #808080;
+}
+
+.dSongCardTitle h3 {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  color: #111111;
+}
+
+.dSongCardInfo {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.largeStat {
+  font-weight: 700;
+  font-size: 58px;
+  margin: 0;
+  padding: 0;
+}
+
+.annotation {
+  text-transform: uppercase;
+  color: #808080;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
