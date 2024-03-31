@@ -25,6 +25,16 @@ body {
   color: #fff700;
 }
 
+.grey {
+  color: grey;
+}
+
+.small {
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+}
+
 .ninety {
   width: 90%;
   margin: 0 auto;
@@ -888,6 +898,11 @@ header {
   font-size: 26px;
   font-weight: 700;
   overflow-wrap: break-word;
+}
+
+.songEntryDetailsLeft p {
+  margin: 10px 0;
+  padding: 0;
 }
 
 .songEntryDetailsRight {

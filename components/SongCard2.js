@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { isDefined } from '../utils/isDefined';
 
 export default function SongCard2({ song }) {
-  const { songTitle, songSlug, songArtist, songImage, songYear, grandFinalPlace, grandFinalStatus } = song.fields;
+  const { songTitle, songSlug, songCountry2, songArtist, songImage, songYear, grandFinalPlace, grandFinalStatus } =
+    song.fields;
   const songUrl = `/songs/${songSlug}`;
   return (
     <div className="countrySongEntry">
@@ -20,7 +21,9 @@ export default function SongCard2({ song }) {
       </div>
       <div className="songEntryDetails">
         <div className="songEntryDetailsLeft">
-          <p>{songYear}</p>
+          <p>
+            {songCountry2} {songYear}
+          </p>
 
           <a href={songUrl}>{songTitle}</a>
 
