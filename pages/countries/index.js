@@ -26,6 +26,9 @@ export default function Countries({ countries }) {
       <Head>
         <title>Countries | Eurovote</title>
       </Head>
+      <div className="pageTitle">
+        <h1>Countries</h1>
+      </div>
       <div className="cardList">
         {countries.map((country) => (
           <CountryCard key={country.sys.id} country={country} />

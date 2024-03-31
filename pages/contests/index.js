@@ -23,6 +23,9 @@ export default function Contests({ contests }) {
       <Head>
         <title>Contests | Eurovote</title>
       </Head>
+      <div className="pageTitle">
+        <h1>Contests</h1>
+      </div>
       <div className="cardList">
         {' '}
         {contests.map((contest) => (

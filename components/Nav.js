@@ -32,9 +32,6 @@ export default function Navbar() {
           <li>
             <a href="/songs">Songs</a>
           </li>
-          <li>
-            <a href="/blog">Blog</a>
-          </li>
         </ul>
       </div>
     </div>

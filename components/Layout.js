@@ -8,18 +8,25 @@ export default function Layout({ children }) {
   return (
     <div className="layout">
       <header>
-        <h1>
-          <a href="/">
-            Eurovote{' '}
-            <span className="yellow">
-              <FontAwesomeIcon icon={faMicrophone} width="32" />
-            </span>
-          </a>
-        </h1>
-        <Nav />
+        <div className="ninety">
+          <div id="hd_left">
+            <h1>
+              <a href="/">
+                Eurovote{' '}
+                <span className="yellow">
+                  <FontAwesomeIcon icon={faMicrophone} width="32" />
+                </span>
+              </a>
+            </h1>
+          </div>
+          <div id="hd_right">
+            <Nav />
+          </div>
+        </div>
       </header>
 
       <div className="page-content">{children}</div>
+
       <div className="infoBanner">
         <p>
           <span className="yellow">
