@@ -1,5 +1,6 @@
 import React from 'react';
 import { createClient } from 'contentful';
+import Image from 'next/image';
 import FeaturedSong from '../components/FeaturedSong';
 import ContestCard from '../components/ContestCard';
 import SongCard from '../components/SongCard';
@@ -32,22 +33,24 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ songs, contests, songList, blogList }) {
+export default function Home({ songList, contests, songs }) {
   return (
     <div className="homeWrapper">
       <Head>
         <title>Eurovote | Eurovision Songs, Results, Votes & Rankings</title>
       </Head>
-      <div className="featuredSongWrapper">
+      <div className="homeBanner">
+        <div className="homeBannerContent">
+          <h2>The place for stats, results and analysis of the Eurovision Song Contest</h2>
+        </div>
+      </div>
+      {/* <div className="featuredSongWrapper">
         {songs.map((song) => (
           <FeaturedSong key={song.sys.id} song={song} />
         ))}
-      </div>
-
-      <div className="cardListWrapper">
-        <div className="sectionHeader">
-          <h3>Featured Songs</h3>
-        </div>
+      </div> */}
+      <div className="homeCarousel">
+        <h3>Featured Songs</h3>
         <div className="homeCardList">
           {' '}
           {songList.map((song) => (
@@ -55,23 +58,8 @@ export default function Home({ songs, contests, songList, blogList }) {
           ))}
         </div>
       </div>
-
-      <div className="cardListWrapper">
-        <div className="sectionHeader">
-          <h3>Latest Blog Posts</h3>
-        </div>
-        <div className="homeCardList">
-          {' '}
-          {blogList.map((blog) => (
-            <FeaturedBlogs key={blog.sys.id} blog={blog} />
-          ))}
-        </div>
-      </div>
-
-      <div className="cardListWrapper">
-        <div className="sectionHeader">
-          <h3>Recent Years</h3>
-        </div>
+      <div className="homeCarousel">
+        <h3>Recent Contests</h3>
         <div className="homeCardList">
           {' '}
           {contests.map((contest) => (

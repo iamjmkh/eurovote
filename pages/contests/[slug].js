@@ -46,40 +46,46 @@ export default function ContestDetails({ contest, songs }) {
       <Head>
         <title>{contestName} | Eurovote</title>
       </Head>
-      <div className="entryHeader">
-        <p className="entryHeaderTop">{hostCountry}</p>
-        <div className="entryHeaderTitle">
-          <h1>{contestName}</h1>
-        </div>
-        <p className="entryHeaderBottom">{city}</p>
+
+      <div className="pageTitle">
+        <h1>{contestName}</h1>
       </div>
-      <div className="statsHeader">
-        <h2>Key Stats</h2>
+
+      <div className="songStats">
+        <div className="songStatsTitle">
+          <h3>Key Stats</h3>
+        </div>
+        <div className="songStatsBreakdownContainer">
+          <div className="songStatsBreakdown">
+            <div className="songStatsBreakdownThird">
+              <p>
+                <span className="largeStats">{countriesNo}</span>
+              </p>
+              <p className="statsAnnotation"># of Countries</p>
+            </div>
+            <div className="songStatsBreakdownThird">
+              <p>
+                <span className="largeStats">{contestEdition}</span>
+              </p>
+              <p className="statsAnnotation">Edition / Year</p>
+            </div>
+            <div className="songStatsBreakdownThird">
+              <p>
+                <span className="largeStats">{returningCountries}</span>
+              </p>
+              <p className="statsAnnotation">Returning Countries</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="entryStatsBlock">
-        <div className="entryStat">
-          <span className="entryStatFigure">{contestEdition}</span>
-          <p>Edition / Year</p>
+
+      <div className="entryList">
+        <div className="entryListTitle">
+          <h4>List of Entries</h4>
         </div>
-        <div className="entryStat">
-          <span className="entryStatFigure">{countriesNo}</span>
-          <p>Countries</p>
-        </div>
-        <div className="entryStat">
-          <span className="entryStatFigure">{returningCountries}</span>
-          <p>Returning Countries</p>
-        </div>
-      </div>
-      <div className="divider"></div>
-      <div className="subHeader">
-        <h3>Entries</h3>
-      </div>
-      <div className="altCardListWrapper">
-        <div className="cardListHorizontal">
-          {songs.map((song) => (
-            <SongCard2 key={song.sys.id} song={song} showCountry />
-          ))}
-        </div>
+        {songs.map((song) => (
+          <SongCard2 key={song.sys.id} song={song} showYear />
+        ))}
       </div>
     </div>
   );

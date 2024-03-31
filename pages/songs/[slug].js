@@ -70,6 +70,7 @@ export default function SongDetails({ song }) {
     songImage2,
     songImage3,
     selectionType,
+    youTubeVideo,
   } = song.fields;
   return (
     <div className="entryPage">
@@ -78,194 +79,237 @@ export default function SongDetails({ song }) {
           {songTitle} | {songCountry2} {songYear} | Eurovote
         </title>
       </Head>
-      <div className="entryHeader">
-        <p className="entryHeaderTop">
+
+      <div className="pageTitle">
+        <p>
           {songCountry2} {songYear}
         </p>
-        <div className="entryHeaderTitle">
-          <h1>{songTitle}</h1>
+        <h1>{songTitle}</h1>
+        <p>{songArtist.fields.artistName}</p>
+      </div>
+
+      <div className="songStats">
+        <div className="songStatsTitle">
+          <h3>Grand Final</h3>
+          {grandFinalStatus && <div className="grandFinalStatus">{grandFinalStatus}</div>}
         </div>
-        <p className="entryHeaderBottom">{songArtist.fields.artistName}</p>
-        {isDefined(selectionType) && (
-          <p>
-            <span className="songEntryTag">{selectionType}</span>
-          </p>
+
+        {isDefined(grandFinalPoints) && (
+          <div className="songStatsBreakdownContainer">
+            <div className="songStatsBreakdown">
+              <div className="songStatsBreakdownThird">
+                <p>
+                  <span className="largeStats">{grandFinalPoints}</span> pts
+                </p>
+                <p className="statsAnnotation">Points</p>
+              </div>
+              <div className="songStatsBreakdownThird">
+                <p className="largeStats">{grandFinalPlace}</p>
+                <p className="statsAnnotation">Position</p>
+              </div>
+              <div className="songStatsBreakdownThird">
+                <p>
+                  <span className="largeStats">{grandFinalPercentage}</span> %
+                </p>
+                <p className="statsAnnotation">% of pts</p>
+              </div>
+            </div>
+            <div className="songStatsJuryVsTelevote">
+              <div className="songStatsJuryVsTelevoteBreakdown">
+                <div className="songStatsJuryVsTelevoteBreakdownTitle">
+                  <h4>
+                    Jury <FontAwesomeIcon icon={faUser} />
+                  </h4>
+                </div>
+
+                {isDefined(grandFinalJuryPoints) && (
+                  <div className="songStatsJuryVsTelevoteBreakdownDetails">
+                    <div className="songStatsBreakdownThirdSmall">
+                      <p>
+                        <span className="largeStatsSmall">{grandFinalJuryPoints}</span> pts
+                      </p>
+                      <p className="statsAnnotationSmall">Points</p>
+                    </div>
+                    <div className="songStatsBreakdownThirdSmall">
+                      <p>
+                        <span className="largeStatsSmall">{grandFinalJuryPlace}</span>
+                      </p>
+                      <p className="statsAnnotationSmall">Position</p>
+                    </div>
+                    <div className="songStatsBreakdownThirdSmall">
+                      <p>
+                        <span className="largeStatsSmall">{grandFinalJuryPercentage}</span> %
+                      </p>
+                      <p className="statsAnnotationSmall">% of pts</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {isDefined(grandFinalTelevotePoints) && (
+                <div className="songStatsJuryVsTelevoteBreakdown">
+                  <div className="songStatsJuryVsTelevoteBreakdownTitle">
+                    <h4>
+                      Televote <FontAwesomeIcon icon={faPhoneFlip} />
+                    </h4>
+                  </div>
+                  <div className="songStatsJuryVsTelevoteBreakdownDetails">
+                    <div className="songStatsBreakdownThirdSmall">
+                      <p>
+                        <span className="largeStatsSmall">{grandFinalTelevotePoints}</span> pts
+                      </p>
+                      <p className="statsAnnotationSmall">Points</p>
+                    </div>
+                    <div className="songStatsBreakdownThirdSmall">
+                      <p>
+                        <span className="largeStatsSmall">{grandFinalTelevotePlace}</span>
+                      </p>
+                      <p className="statsAnnotationSmall">Position</p>
+                    </div>
+                    <div className="songStatsBreakdownThirdSmall">
+                      <p>
+                        <span className="largeStatsSmall">{grandFinalTelevotePercentage}</span> %
+                      </p>
+                      <p className="statsAnnotationSmall">% of pts</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
         )}
       </div>
-      {/* GRAND FINAL */}
-      <div className="entryDetails">
-        <div className="grandFinal">
-          <div className="statsHeader">
-            <h2>Grand Final</h2>
-            {grandFinalStatus && <div className="grandFinalStatus">{grandFinalStatus}</div>}
-          </div>
 
-          {isDefined(grandFinalPoints) && (
-            <div className="entryStatsBlock">
-              <div className="entryStat">
-                <span className="entryStatFigure">{grandFinalPoints}</span> pts
-                <p>POINTS</p>
-              </div>
-              <div className="entryStat">
-                <span className="entryStatFigure">{grandFinalPlace}</span>
-                <p>POSITION</p>
-              </div>
-              <div className="entryStat">
-                <span className="entryStatFigure">{grandFinalPercentage}</span> %<p>PERCENTAGE OF PTS</p>
-              </div>
-            </div>
-          )}
-
-          <div className="juryVsTelevoteBlock">
-            {isDefined(grandFinalPoints) && (
-              <div className="juryBlock">
-                <h3>
-                  Jury <FontAwesomeIcon icon={faUser} />
-                </h3>
-                <div className="entryStatsBlock">
-                  <div className="entryStat">
-                    <span className="entryStatFigureSmall">{grandFinalJuryPoints}</span> pts
-                    <p>Points</p>
-                  </div>
-                  <div className="entryStat">
-                    <span className="entryStatFigureSmall">{grandFinalJuryPlace}</span>
-                    <p>Position</p>
-                  </div>
-                  <div className="entryStat">
-                    <span className="entryStatFigureSmall">{grandFinalJuryPercentage}</span>%<p>Percentage of Pts</p>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {isDefined(grandFinalPoints) && (
-              <div className="televoteBlock">
-                <h3>
-                  Televote <FontAwesomeIcon icon={faPhoneFlip} />
-                </h3>
-                <div className="entryStatsBlock">
-                  <div className="entryStat">
-                    <span className="entryStatFigureSmall">{grandFinalTelevotePoints}</span> pts
-                    <p>Points</p>
-                  </div>
-                  <div className="entryStat">
-                    <span className="entryStatFigureSmall">{grandFinalTelevotePlace}</span>
-                    <p>Position</p>
-                  </div>
-                  <div className="entryStat">
-                    <span className="entryStatFigureSmall">{grandFinalTelevotePercentage}</span>%
-                    <p>Percentage of Points</p>
-                  </div>
-                </div>
-              </div>
-            )}
+      {isDefined(youTubeVideo) && (
+        <div className="songVideo">
+          <div className="songVideoEmbed">
+            <iframe src={youTubeVideo} frameborder="0" allowfullscreen />
           </div>
         </div>
+      )}
 
-        {/* IMAGE DIVIDER */}
-        <div className="entryImageBlock">
-          <div className="entryImage">
-            <Image
-              src={'https:' + songImage2.fields.file.url}
-              width={0}
-              height={0}
-              size="100vw"
-              style={{ width: '100%', height: '100%' }}
-            />
-            <p>{songImage2.fields.description}</p>
+      {isDefined(semiFinalsPoints) && (
+        <div className="songStats">
+          <div className="songStatsTitle">
+            <h3>Semi Final</h3>
           </div>
-          <div className="entryImage">
-            <Image
-              src={'https:' + songImage.fields.file.url}
-              width={0}
-              height={0}
-              size="100vw"
-              style={{ width: '100%', height: '100%' }}
-            />
-            <p>{songImage.fields.description}</p>
-          </div>
-          <div className="entryImage">
-            <Image
-              src={'https:' + songImage3.fields.file.url}
-              width={0}
-              height={0}
-              size="100vw"
-              style={{ width: '100%', height: '100%' }}
-            />
-            <p>{songImage3.fields.description}</p>
-          </div>
-        </div>
 
-        {/* SEMI FINAL */}
-        <div className="divider"></div>
-        {isDefined(semiFinalsPoints) && (
-          <div className="semiBlock">
-            <div className="statsHeader">
-              <h2>Semi Final</h2>
-            </div>
-
-            <div className="entryStatsBlock">
-              <div className="entryStat">
-                <span className="entryStatFigure">{semiFinalsPoints}</span> pts
-                <p>POINTS</p>
+          <div className="songStatsBreakdownContainer">
+            <div className="songStatsBreakdown">
+              <div className="songStatsBreakdownThird">
+                <p>
+                  <span className="largeStats">{semiFinalsPoints}</span> pts
+                </p>
+                <p className="statsAnnotation">Points</p>
               </div>
-              <div className="entryStat">
-                <span className="entryStatFigure">{semiFinalsPlace}</span>
-                <p>POSITION</p>
+              <div className="songStatsBreakdownThird">
+                <p className="largeStats">{semiFinalsPlace}</p>
+                <p className="statsAnnotation">Position</p>
               </div>
-              <div className="entryStat">
-                <span className="entryStatFigure">{semiFinalsPercentage}</span> %<p>PERCENTAGE OF PTS</p>
+              <div className="songStatsBreakdownThird">
+                <p>
+                  <span className="largeStats">{semiFinalsPercentage}</span> %
+                </p>
+                <p className="statsAnnotation">% of pts</p>
               </div>
             </div>
-
-            <div className="centralAlign">
-              <div className="juryVsTelevoteBlock">
-                {isDefined(semiFinalsJuryPoints) && (
-                  <div className="juryBlock">
-                    <h3>
+            <div className="songStatsJuryVsTelevote">
+              {isDefined(semiFinalsJuryPoints) && (
+                <div className="songStatsJuryVsTelevoteBreakdown">
+                  <div className="songStatsJuryVsTelevoteBreakdownTitle">
+                    <h4>
                       Jury <FontAwesomeIcon icon={faUser} />
-                    </h3>
-                    <div className="entryStatsBlock">
-                      <div className="entryStat">
-                        <span className="entryStatFigureSmall">{semiFinalsJuryPoints}</span> pts
-                        <p>Points</p>
-                      </div>
-                      <div className="entryStat">
-                        <span className="entryStatFigureSmall">{semiFinalsJuryPlace}</span>
-                        <p>Position</p>
-                      </div>
-                      <div className="entryStat">
-                        <span className="entryStatFigureSmall">{semiFinalsJuryPercentage}</span>%
-                        <p>Percentage of Pts</p>
-                      </div>
+                    </h4>
+                  </div>
+
+                  <div className="songStatsJuryVsTelevoteBreakdownDetails">
+                    <div className="songStatsBreakdownThirdSmall">
+                      <p>
+                        <span className="largeStatsSmall">{semiFinalsJuryPoints}</span> pts
+                      </p>
+                      <p className="statsAnnotationSmall">Points</p>
+                    </div>
+                    <div className="songStatsBreakdownThirdSmall">
+                      <p>
+                        <span className="largeStatsSmall">{semiFinalsJuryPlace}</span>
+                      </p>
+                      <p className="statsAnnotationSmall">Position</p>
+                    </div>
+                    <div className="songStatsBreakdownThirdSmall">
+                      <p>
+                        <span className="largeStatsSmall">{semiFinalsJuryPercentage}</span> %
+                      </p>
+                      <p className="statsAnnotationSmall">% of pts</p>
                     </div>
                   </div>
-                )}
-                {isDefined(semiFinalsTelevotePoints) && (
-                  <div className="televoteBlock">
-                    <h3>
+                </div>
+              )}
+
+              {isDefined(semiFinalsTelevotePoints) && (
+                <div className="songStatsJuryVsTelevoteBreakdown">
+                  <div className="songStatsJuryVsTelevoteBreakdownTitle">
+                    <h4>
                       Televote <FontAwesomeIcon icon={faPhoneFlip} />
-                    </h3>
-                    <div className="entryStatsBlock">
-                      <div className="entryStat">
-                        <span className="entryStatFigureSmall">{semiFinalsTelevotePoints}</span> pts
-                        <p>Points</p>
-                      </div>
-                      <div className="entryStat">
-                        <span className="entryStatFigureSmall">{semiFinalsTelevotePlace}</span>
-                        <p>Position</p>
-                      </div>
-                      <div className="entryStat">
-                        <span className="entryStatFigureSmall">{semiFinalsTelevotePercentage}</span>%
-                        <p>Percentage of Points</p>
-                      </div>
+                    </h4>
+                  </div>
+                  <div className="songStatsJuryVsTelevoteBreakdownDetails">
+                    <div className="songStatsBreakdownThirdSmall">
+                      <p>
+                        <span className="largeStatsSmall">{semiFinalsTelevotePoints}</span> pts
+                      </p>
+                      <p className="statsAnnotationSmall">Points</p>
+                    </div>
+                    <div className="songStatsBreakdownThirdSmall">
+                      <p>
+                        <span className="largeStatsSmall">{semiFinalsTelevotePlace}</span>
+                      </p>
+                      <p className="statsAnnotationSmall">Position</p>
+                    </div>
+                    <div className="songStatsBreakdownThirdSmall">
+                      <p>
+                        <span className="largeStatsSmall">{semiFinalsTelevotePercentage}</span> %
+                      </p>
+                      <p className="statsAnnotationSmall">% of pts</p>
                     </div>
                   </div>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </div>
-        )}
+        </div>
+      )}
+
+      <div className="imageGallery">
+        <div className="imageGalleryThird">
+          <Image
+            src={'https:' + songImage2.fields.file.url}
+            width={0}
+            height={0}
+            size="100vw"
+            style={{ width: '100%', height: '100%' }}
+          />
+          <p>{songImage2.fields.description}</p>
+        </div>
+        <div className="imageGalleryThird">
+          <Image
+            src={'https:' + songImage.fields.file.url}
+            width={0}
+            height={0}
+            size="100vw"
+            style={{ width: '100%', height: '100%' }}
+          />
+          <p>{songImage.fields.description}</p>
+        </div>
+        <div className="imageGalleryThird">
+          <Image
+            src={'https:' + songImage3.fields.file.url}
+            width={0}
+            height={0}
+            size="100vw"
+            style={{ width: '100%', height: '100%' }}
+          />
+          <p>{songImage3.fields.description}</p>
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,6 @@ export default function Pagination(props) {
 
   const prevPageUrl = currentPage === 2 ? '/songs' : `/songs/page/${currentPage - 1}`;
   const nextPageUrl = `/songs/page/${currentPage + 1}`;
-  /** need to update the above */
 
   return (
     <div className="paginationBox">

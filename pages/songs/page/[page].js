@@ -54,6 +54,12 @@ export async function getStaticProps({ params }) {
 export default function SongPageIndex({ page, songs, totalPages }) {
   return (
     <div className="cardListWrapper">
+      <div className="pageTitle">
+        <h1>Songs </h1>
+        <p>
+          Page {page} / {totalPages}
+        </p>
+      </div>
       <div className="cardList">
         {songs.map((song) => (
           <SongCard key={song.sys.id} song={song} />

@@ -11,6 +11,11 @@ export default function Songs({ songs, totalPages }) {
       <Head>
         <title>Songs | Eurovote</title>
       </Head>
+
+      <div className="pageTitle">
+        <h1>Songs</h1>
+      </div>
+
       <div className="cardList">
         {songs.map((song) => (
           <SongCard key={song.sys.id} song={song} />
