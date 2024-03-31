@@ -1,13 +1,12 @@
 import React from 'react';
-import Image from 'next/image';
 
 export default function SongCard({ song }) {
-  const { songTitle, songSlug, songCountry2, songYear, songImage, youTubeVideo } = song.fields;
+  const { songTitle, songSlug, songCountry2, songYear, youTubeVideo } = song.fields;
   const songUrl = `/songs/${songSlug}`;
   return (
     <div className="featuredSong">
       <div className="featuredSongImage">
-        <iframe src={youTubeVideo} frameborder="0" allowfullscreen />
+        <iframe src={youTubeVideo} frameBorder="0" allowfullscreen />
       </div>
       <div className="featuredSongInfo">
         <h3>

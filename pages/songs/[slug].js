@@ -69,7 +69,6 @@ export default function SongDetails({ song }) {
     songImage,
     songImage2,
     songImage3,
-    selectionType,
     youTubeVideo,
   } = song.fields;
   return (
@@ -183,7 +182,7 @@ export default function SongDetails({ song }) {
       {isDefined(youTubeVideo) && (
         <div className="songVideo">
           <div className="songVideoEmbed">
-            <iframe src={youTubeVideo} frameborder="0" allowfullscreen />
+            <iframe src={youTubeVideo} frameBorder="0" allowfullscreen />
           </div>
         </div>
       )}

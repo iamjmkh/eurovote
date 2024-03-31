@@ -1,10 +1,7 @@
 import React from 'react';
 import { createClient } from 'contentful';
-import Image from 'next/image';
-import FeaturedSong from '../components/FeaturedSong';
 import ContestCard from '../components/ContestCard';
 import SongCard from '../components/SongCard';
-import FeaturedBlogs from '../components/FeaturedBlogs';
 import Head from 'next/head';
 
 export async function getStaticProps() {
@@ -33,7 +30,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ songList, contests, songs }) {
+export default function Home({ songList, contests }) {
   return (
     <div className="homeWrapper">
       <Head>
