@@ -40,7 +40,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function ContestDetails({ contest, songs }) {
-  const { contestName, city, hostCountry, countriesNo, returningCountries, contestEdition } = contest.fields;
+  const { contestName, countriesNo, returningCountries, contestEdition } = contest.fields;
   return (
     <div className="entryPage">
       <Head>

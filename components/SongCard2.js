@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { isDefined } from '../utils/isDefined';
 
-export default function SongCard2({ song, showYear = false, showCountry = false }) {
+export default function SongCard2({ song }) {
   const { songTitle, songSlug, songArtist, songImage, songYear, grandFinalPlace, grandFinalStatus } = song.fields;
   const songUrl = `/songs/${songSlug}`;
   return (
