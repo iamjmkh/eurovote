@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { isDefined } from '../utils/isDefined';
+import { SongTagColourMap } from '../utils/Config';
 
 export default function SongCard2({ song }) {
   const {
@@ -16,6 +17,7 @@ export default function SongCard2({ song }) {
   } = song.fields;
   const songUrl = `/songs/${songSlug}`;
   console.log(songTags);
+
   return (
     <div className="countrySongEntry">
       <div className="songEntryImage">
@@ -39,7 +41,7 @@ export default function SongCard2({ song }) {
 
           <p>{songArtist.fields.artistName}</p>
 
-          {(songTags?.includes('Last Place') || songTags?.includes('Semi Last Place')) && (
+          {/* {(songTags?.includes('Last Place') || songTags?.includes('Semi Last Place')) && (
             <p>
               <span className="songTag tagRed">{songTags}</span>
             </p>
@@ -55,7 +57,13 @@ export default function SongCard2({ song }) {
             <p>
               <span className="songTag tagGold">{songTags}</span>
             </p>
-          )}
+          )} */}
+
+          {songTags?.map((tag) => (
+            <span key={tag} className={`songTag ${SongTagColourMap[tag]}`}>
+              {tag}
+            </span>
+          ))}
         </div>
         <div className="songEntryDetailsRight">
           {isDefined(grandFinalPlace) && (
