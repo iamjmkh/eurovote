@@ -678,6 +678,8 @@ header {
   padding: 0 10px 60px 10px;
   text-align: center;
   background: #ffffff;
+  border-left: 1px solid #f8f8f8;
+  border-right: 1px solid #f8f8f8;
 }
 
 .songStatsJuryVsTelevoteBreakdownTitle {
@@ -756,12 +758,18 @@ header {
   }
 
   .songStatsBreakdown {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   .songStatsBreakdownThird {
     width: 100%;
     margin: 20px auto;
+    order: 1;
+  }
+
+  .songStatsBreakdownThird:nth-child(2) {
+    order: 0;
   }
 
   .largeStats {
@@ -783,12 +791,18 @@ header {
   }
 
   .songStatsJuryVsTelevoteBreakdownDetails {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   .songStatsBreakdownThirdSmall {
     width: 100%;
     margin: 20px auto;
+    order: 1;
+  }
+
+  .songStatsBreakdownThirdSmall:nth-child(2) {
+    order: 0;
   }
 
   .grandFinalStatus {
