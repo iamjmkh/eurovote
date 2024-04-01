@@ -16,7 +16,6 @@ export default function SongCard2({ song }) {
     songTags,
   } = song.fields;
   const songUrl = `/songs/${songSlug}`;
-  console.log(songTags);
 
   return (
     <div className="countrySongEntry">
@@ -40,24 +39,6 @@ export default function SongCard2({ song }) {
           <a href={songUrl}>{songTitle}</a>
 
           <p>{songArtist.fields.artistName}</p>
-
-          {/* {(songTags?.includes('Last Place') || songTags?.includes('Semi Last Place')) && (
-            <p>
-              <span className="songTag tagRed">{songTags}</span>
-            </p>
-          )}
-
-          {songTags?.includes('Semi Winner') && (
-            <p>
-              <span className="songTag tagGreen">{songTags}</span>
-            </p>
-          )}
-
-          {songTags?.includes('Host Entry') && (
-            <p>
-              <span className="songTag tagGold">{songTags}</span>
-            </p>
-          )} */}
 
           {songTags?.map((tag) => (
             <span key={tag} className={`songTag ${SongTagColourMap[tag]}`}>

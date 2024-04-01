@@ -278,38 +278,40 @@ export default function SongDetails({ song }) {
         </div>
       )}
 
-      <div className="imageGallery">
-        <div className="imageGalleryThird">
-          <Image
-            src={'https:' + songImage2.fields.file.url}
-            width={0}
-            height={0}
-            size="100vw"
-            style={{ width: '100%', height: '100%' }}
-          />
-          <p>{songImage2.fields.description}</p>
+      {isDefined(songImage2) && (
+        <div className="imageGallery">
+          <div className="imageGalleryThird">
+            <Image
+              src={'https:' + songImage2.fields.file.url}
+              width={0}
+              height={0}
+              size="100vw"
+              style={{ width: '100%', height: '100%' }}
+            />
+            <p>{songImage2.fields.description}</p>
+          </div>
+          <div className="imageGalleryThird">
+            <Image
+              src={'https:' + songImage.fields.file.url}
+              width={0}
+              height={0}
+              size="100vw"
+              style={{ width: '100%', height: '100%' }}
+            />
+            <p>{songImage.fields.description}</p>
+          </div>
+          <div className="imageGalleryThird">
+            <Image
+              src={'https:' + songImage3.fields.file.url}
+              width={0}
+              height={0}
+              size="100vw"
+              style={{ width: '100%', height: '100%' }}
+            />
+            <p>{songImage3.fields.description}</p>
+          </div>
         </div>
-        <div className="imageGalleryThird">
-          <Image
-            src={'https:' + songImage.fields.file.url}
-            width={0}
-            height={0}
-            size="100vw"
-            style={{ width: '100%', height: '100%' }}
-          />
-          <p>{songImage.fields.description}</p>
-        </div>
-        <div className="imageGalleryThird">
-          <Image
-            src={'https:' + songImage3.fields.file.url}
-            width={0}
-            height={0}
-            size="100vw"
-            style={{ width: '100%', height: '100%' }}
-          />
-          <p>{songImage3.fields.description}</p>
-        </div>
-      </div>
+      )}
     </div>
   );
 }
