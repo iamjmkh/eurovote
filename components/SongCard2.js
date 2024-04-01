@@ -3,9 +3,19 @@ import Image from 'next/image';
 import { isDefined } from '../utils/isDefined';
 
 export default function SongCard2({ song }) {
-  const { songTitle, songSlug, songCountry2, songArtist, songImage, songYear, grandFinalPlace, grandFinalStatus } =
-    song.fields;
+  const {
+    songTitle,
+    songSlug,
+    songCountry2,
+    songArtist,
+    songImage,
+    songYear,
+    grandFinalPlace,
+    grandFinalStatus,
+    songTags,
+  } = song.fields;
   const songUrl = `/songs/${songSlug}`;
+  console.log(songTags);
   return (
     <div className="countrySongEntry">
       <div className="songEntryImage">
@@ -28,6 +38,24 @@ export default function SongCard2({ song }) {
           <a href={songUrl}>{songTitle}</a>
 
           <p>{songArtist.fields.artistName}</p>
+
+          {(songTags?.includes('Last Place') || songTags?.includes('Semi Last Place')) && (
+            <p>
+              <span className="songTag tagRed">{songTags}</span>
+            </p>
+          )}
+
+          {songTags?.includes('Semi Winner') && (
+            <p>
+              <span className="songTag tagGreen">{songTags}</span>
+            </p>
+          )}
+
+          {songTags?.includes('Host Entry') && (
+            <p>
+              <span className="songTag tagGold">{songTags}</span>
+            </p>
+          )}
         </div>
         <div className="songEntryDetailsRight">
           {isDefined(grandFinalPlace) && (

@@ -931,6 +931,27 @@ header {
   color: grey;
 }
 
+.songTag {
+  padding: 5px;
+  font-size: 11px;
+  border-radius: 5px;
+}
+
+.tagRed {
+  background: pink;
+  color: red;
+}
+
+.tagGreen {
+  background: #d4f8d4;
+  color: green;
+}
+
+.tagGold {
+  background: #fff1a5;
+  color: #ccac00;
+}
+
 @media screen and (max-width: 825px) {
   .countrySongEntry {
     display: block;
