@@ -14,6 +14,7 @@ export default function SongCard2({ song }) {
     grandFinalPlace,
     grandFinalStatus,
     songTags,
+    grandFinalPoints,
   } = song.fields;
   const songUrl = `/songs/${songSlug}`;
 
@@ -52,6 +53,7 @@ export default function SongCard2({ song }) {
               <p>
                 <span className="mediumStats">{grandFinalPlace}</span>
               </p>
+              <span className="smallStats">{grandFinalPoints} pts</span>
               <p>Grand Final Pos.</p>
             </div>
           )}

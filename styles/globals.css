@@ -661,6 +661,12 @@ header {
   color: grey;
 }
 
+.smallStats {
+  color: grey;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
 .statsAnnotation {
   margin: 0;
   padding: 0;
