@@ -2,7 +2,8 @@ import React from 'react';
 import { createClient } from 'contentful';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhoneFlip, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faPhoneFlip, faUser, faLanguage, faTrophy, faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { formatDate } from '../../helpers/date';
 import Head from 'next/head';
 
 const client = createClient({
@@ -70,6 +71,9 @@ export default function SongDetails({ song }) {
     songImage2,
     songImage3,
     youTubeVideo,
+    languages,
+    releaseDate,
+    selectionType,
   } = song.fields;
   return (
     <div className="entryPage">
@@ -312,6 +316,42 @@ export default function SongDetails({ song }) {
           </div>
         </div>
       )}
+
+      <div className="songDetails">
+        <div className="songDetailsBox">
+          {isDefined(releaseDate) && (
+            <div className="songDetailsGrid">
+              <div className="songDetailsGridItem">
+                <span className="blue">
+                  <FontAwesomeIcon icon={faTrophy} />
+                </span>{' '}
+                {selectionType}
+              </div>
+              <div className="songDetailsGridItem">
+                <span className="blue">
+                  <FontAwesomeIcon icon={faCalendar} />
+                </span>{' '}
+                {formatDate(releaseDate)}
+              </div>
+            </div>
+          )}
+
+          {isDefined(languages) && (
+            <div className="songDetailsLanguages">
+              <div className="songDetailsGridItem">
+                <span className="blue">
+                  <FontAwesomeIcon icon={faLanguage} />
+                </span>{' '}
+                {languages.map((language) => (
+                  <span className="languageItem" key={language}>
+                    {language}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

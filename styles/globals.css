@@ -29,6 +29,11 @@ body {
   color: grey;
 }
 
+.blue {
+  color: #212450;
+  margin: 0 10px 0 0;
+}
+
 .small {
   font-size: 13px;
   margin: 0;
@@ -740,6 +745,59 @@ header {
   text-transform: uppercase;
   color: grey;
   font-size: 11px;
+}
+
+.songDetails {
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1px solid #111111;
+  padding: 20px 0;
+}
+
+.songDetailsBox {
+  width: 90%;
+  margin: 30px auto;
+}
+
+.songDetailsGrid {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 50px;
+  font-size: 24px;
+  background: #ffffff;
+}
+
+.songDetailsLanguages {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 0;
+  text-align: center;
+  font-size: 24px;
+  background: #ffffff;
+  border-top: 15px solid #f8f8f8;
+}
+
+.languageItem {
+  margin: 0px 5px;
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+@media screen and (max-width: 950px) {
+  .songDetailsGrid {
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .blue {
+    margin: 0 5px 0 0;
+  }
 }
 
 @media screen and (max-width: 900px) {
