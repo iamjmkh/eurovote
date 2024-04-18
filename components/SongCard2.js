@@ -15,6 +15,7 @@ export default function SongCard2({ song }) {
     grandFinalStatus,
     songTags,
     grandFinalPoints,
+    languages,
   } = song.fields;
   const songUrl = `/songs/${songSlug}`;
 
@@ -40,6 +41,15 @@ export default function SongCard2({ song }) {
           <a href={songUrl}>{songTitle}</a>
 
           <p>{songArtist.fields.artistName}</p>
+          {isDefined(languages) && (
+            <p>
+              {languages.map((language) => (
+                <span className="grey small gap" key={language}>
+                  {language}
+                </span>
+              ))}
+            </p>
+          )}
 
           {songTags?.map((tag) => (
             <span key={tag} className={`songTag ${SongTagColourMap[tag]}`}>

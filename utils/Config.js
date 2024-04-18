@@ -5,4 +5,6 @@ export const SongTagColourMap = {
   'Semi Winner': 'tagGreen',
   'Last Place': 'tagRed',
   'Semi Last Place': 'tagRed',
+  'Jury Winner': 'tagGreen',
+  'Televote Winner': 'tagGreen',
 };
