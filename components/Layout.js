@@ -50,6 +50,7 @@ export default function Layout({ children }) {
         <p>hello@eurovote.uk</p>
         <br></br>
         <p className="small grey">Brought to you by JMKH Studios</p>
+        <p className="small grey">Office 2814, 182-184 High Street North, East Ham, London E6 2JA</p>
       </footer>
     </div>
   );
