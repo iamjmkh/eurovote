@@ -74,6 +74,7 @@ export default function SongDetails({ song }) {
     languages,
     releaseDate,
     selectionType,
+    liveViewing,
   } = song.fields;
   return (
     <div className="entryPage">

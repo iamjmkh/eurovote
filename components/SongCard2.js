@@ -75,6 +75,14 @@ export default function SongCard2({ song }) {
               <p>Did Not Qualify</p>
             </div>
           )}
+          {grandFinalStatus === 'Disqualified' && (
+            <div className="songEntryFinalPlace">
+              <p>
+                <span className="smallMediumStats">X</span>
+              </p>
+              <p>Disqualified</p>
+            </div>
+          )}
           {grandFinalStatus === 'TBC' && (
             <div className="songEntryFinalPlace">
               <p>

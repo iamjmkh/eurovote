@@ -48,6 +48,8 @@ export default function Layout({ children }) {
         </p>
         <p>Copyright 2024 &copy; Eurovote</p>
         <p>hello@eurovote.uk</p>
+        <br></br>
+        <p className="small grey">Brought to you by JMKH Studios</p>
       </footer>
     </div>
   );
