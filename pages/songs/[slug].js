@@ -118,14 +118,13 @@ export default function SongDetails({ song }) {
               </div>
             </div>
             <div className="songStatsJuryVsTelevote">
-              <div className="songStatsJuryVsTelevoteBreakdown">
-                <div className="songStatsJuryVsTelevoteBreakdownTitle">
-                  <h4>
-                    Jury <FontAwesomeIcon icon={faUser} />
-                  </h4>
-                </div>
-
-                {isDefined(grandFinalJuryPoints) && (
+              {isDefined(grandFinalJuryPoints) && (
+                <div className="songStatsJuryVsTelevoteBreakdown">
+                  <div className="songStatsJuryVsTelevoteBreakdownTitle">
+                    <h4>
+                      Jury <FontAwesomeIcon icon={faUser} />
+                    </h4>
+                  </div>
                   <div className="songStatsJuryVsTelevoteBreakdownDetails">
                     <div className="songStatsBreakdownThirdSmall">
                       <p>
@@ -146,8 +145,8 @@ export default function SongDetails({ song }) {
                       <p className="statsAnnotationSmall">% of pts</p>
                     </div>
                   </div>
-                )}
-              </div>
+                </div>
+              )}
 
               {isDefined(grandFinalTelevotePoints) && (
                 <div className="songStatsJuryVsTelevoteBreakdown">
